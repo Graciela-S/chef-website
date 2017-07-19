@@ -13,11 +13,14 @@ service 'httpd' do
    action [:enable, :start]
 end
 
+user 'web_admin' do
+   action :create
+end
+
 file '/var/www/html/home.html' do
    content '<html> "A person who never made a mistake never tried anything new" ~ Albert Einstein <html>' 
    mode '0755'
-   owner 'root'
+   owner 'web_admin'
 end
-
 	 
 
