@@ -22,5 +22,10 @@ file '/var/www/html/home.html' do
    mode '0755'
    owner 'web_admin'
 end
+
+file '/etc/motd' do
+   content '¡Hola! ¡Bienvenido a ChefSDK! El mejor lugar para crear cookbooks :)'
+   mode '0755'
+end
 	 
 
