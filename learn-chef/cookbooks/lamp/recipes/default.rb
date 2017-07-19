@@ -13,11 +13,11 @@ service 'httpd' do
    action [:enable, :start]
 end
 
-web_app "ChefPro" do
-   server_name node ['hostname']
-   server_aliases [node['fqdn'], "chefpro.com"
-   docroot "/srv/www/chefpro"
+file '/var/www/html/home.html' do
+   content '<html> "A person who never made a mistake never tried anything new" ~ Albert Einstein <html>' 
+   mode '0755'
+   owner 'root'
 end
 
-include_recipe 'lamp::web' 
+	 
 
